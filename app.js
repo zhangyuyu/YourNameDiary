@@ -17,6 +17,14 @@ app.use(express.static('src/public/'));
 
 app.use('/', router);
 
+app.get('*', (req, res) => {
+  res.status(404)
+     .render('error', {
+          title: 'Your Name Diary',
+          content: 'NOT FOUND!'
+  });
+});
+
 app.listen(3000, () => {
   console.log('Forum app listening on port 3000!');
 });

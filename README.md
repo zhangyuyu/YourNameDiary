@@ -27,7 +27,7 @@ npm install
 gulp start
 
 ### Access the Application
-http://localhost:3000/
+http://localhost:3000/your-name-diary/
 
 ### 参考
 https://github.com/erttyy8821/MyDiary

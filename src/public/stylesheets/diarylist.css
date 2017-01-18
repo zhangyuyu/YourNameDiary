@@ -1,0 +1,29 @@
+.diary-list {
+    background-image: url('/images/diarylist.jpg');
+    background-position: 100% 0%;
+    background-repeat: no-repeat;
+}
+
+diary {
+    text-align: center;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.diary-inner {
+    padding: 15px 20px;
+    background-color: #eee;
+}
+
+.diary-title {
+    font-family: museo-slab,serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.diary-content{
+    text-transform: none;
+    border: 0;
+    margin: 20px 30px
+}

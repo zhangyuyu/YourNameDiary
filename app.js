@@ -1,6 +1,7 @@
 const express = require('express');
 const ejs = require('ejs');
 const router = require('./src/routers/router.js');
+require('./src/dao/diaryDB.js');
 
 ejs.filters.fromNow = function(date){
     moment.lang('zh-cn');

@@ -1,0 +1,22 @@
+<% include header.ejs %>
+
+<div class="container">
+    <div class="jumbotron diary-list">
+        <h1 class="text-center"><%= title %></h1>
+    </div>
+
+    <div class="row">
+        <% for(var i=0; i<content.length; i++) {%>
+            <div class="col-md-6 col-sm-6 col-xs-12 momentist-postJS">
+                <diary>
+                    <div class="diary-inner">
+                        <p class="diary-title">Title: <%= content[i].title %> </p>
+                        <p class="diary-content">Content: <%= content[i].content %> </p>
+                    </div>
+                </diary>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<% include footer.ejs %>

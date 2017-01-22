@@ -10,5 +10,6 @@ router.get('/your-name-diary/', (req, res) => {
 });
 
 router.get('/your-name-diary/diaryList', DiaryController.getAll);
+router.post('/your-name-diary/diaryList', DiaryController.create);
 
 module.exports = router;

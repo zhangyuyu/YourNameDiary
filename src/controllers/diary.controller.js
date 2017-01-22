@@ -5,17 +5,16 @@ const DiaryController = (Diary) => {
     return {
         getAll: (req, res) => {
             Diary.find((err, data) => {
-
-                const first = new Diary({
-                    title: "Hello World",
-                    content: "First Diary by default"
-                });
-
                 res.render('diaryList', {
                     title: 'Your Diary List',
-                    content: [first, first, first]
+                    content: data
                 });
+            });
+        },
 
+        create: (req, res) => {
+            new Diary(req.body).save((err, data) => {
+                res.status(201).json(data);
             });
         }
     }

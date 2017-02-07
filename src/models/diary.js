@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 const diarySchema = new Schema({
-    title: String,
+    title: {
+            type: String,
+            required: [true, 'Title is required']
+    },
     content: String,
     location: String,
     photo: String,

@@ -14,5 +14,6 @@ router.get('/your-name-diary/newDiary', IndexController.newDiary);
 
 router.get('/your-name-diary/diaryList', DiaryController.getAll);
 router.post('/your-name-diary/diaryList', DiaryController.create);
+router.delete('/your-name-diary/diaryList/:id', DiaryController.deleteDiaryById);
 
 module.exports = router;

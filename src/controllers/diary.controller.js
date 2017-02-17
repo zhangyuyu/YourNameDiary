@@ -12,7 +12,16 @@ const DiaryController = (Diary) => {
             });
         },
 
-        create: (req, res) => {
+        getDiaryById: (req, res) => {
+            Diary.findById(req.params.id, (err, data) => {
+                res.render('diary', {
+                    title: 'Diary',
+                    content: data
+                });
+            });
+        },
+
+        createDiary: (req, res) => {
             new Diary(req.body).save((err, data) => {
                 res.status(201).json(data);
             });

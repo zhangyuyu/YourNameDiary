@@ -7,18 +7,6 @@ const IndexController = () => {
             res.render('newDiary', {
                 title: 'Your Diary List'
             });
-        },
-        createNewDiary: (req, res) => {
-            Diary(req.body).save((err) => {
-                if (!err) {
-                    Diary.find((err, data) => {
-                        res.render('diaryList', {
-                            title: 'Your Diary List',
-                            content: data
-                        });
-                    });
-                }
-            });
         }
     }
 };

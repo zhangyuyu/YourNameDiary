@@ -1,0 +1,18 @@
+<% include header.ejs %>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="text-center"><%= title %></h1>
+    </div>
+
+    <div class="row">
+        <diary>
+            <div class="diary-inner">
+                <p class="diary-title">Title: <%= content.title %> </p>
+                <p class="diary-content">Content: <%= content.content %> </p>
+            </div>
+        </diary>
+    </div>
+</div>
+
+<% include footer.ejs %>

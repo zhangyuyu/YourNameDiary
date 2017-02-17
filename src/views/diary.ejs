@@ -1,11 +1,9 @@
 <% include header.ejs %>
 
 <div class="container">
-    <div class="jumbotron">
-        <h1 class="text-center"><%= title %></h1>
-    </div>
-
     <div class="row">
+        <a href="/your-name-diary/diary/<%= content.id %>" class="btn btn-primary btn-xs">编辑</a>
+        <a id="deleteDiary" diaryid="<%= content.id %>" class="btn btn-default btn-xs">删除</a>
         <diary>
             <div class="diary-inner">
                 <p class="diary-title">Title: <%= content.title %> </p>

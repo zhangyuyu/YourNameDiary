@@ -11,10 +11,12 @@ router.get('/', (req, res) => {
 });
 
 router.get('/newDiary', IndexController.newDiary);
+router.get('/editDiary/:id', IndexController.editDiary);
 
 router.get('/diary', DiaryController.getAll);
 router.post('/diary', DiaryController.createDiary);
 router.get('/diary/:id', DiaryController.getDiaryById);
 router.delete('/diary/:id', DiaryController.deleteDiaryById);
+router.post('/diary/:id', DiaryController.updateDiaryById);
 
 module.exports = router;

@@ -5,7 +5,15 @@ const IndexController = () => {
     return {
         newDiary: (req, res) => {
             res.render('newDiary', {
-                title: 'Your Diary List'
+                title: 'New Diary'
+            });
+        },
+        editDiary: (req, res) => {
+            Diary.findById(req.params.id, (err, data) => {
+                  res.render('editDiary', {
+                      title: 'Edit Diary',
+                      content: data
+                  });
             });
         }
     }

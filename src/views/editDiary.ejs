@@ -1,0 +1,20 @@
+<% include header.ejs %>
+
+<div class="container">
+    <form class="form-diary" method="POST" action="/your-name-diary/diary/<%= content.id %>">
+        <div>
+            <label class="sr-only">标题</label>
+            <input name="title" class="form-control" autofocus value="<%= content.title %>"/>
+        </div>
+
+        <div style="margin-top:5px;">
+            <textarea name="content" class="form-control" rows="20"><%= content.content %></textarea>
+        </div>
+
+        <div style="margin-top:5px;">
+            <button type="submit" class="btn btn-primary">保存</button>
+        </div>
+    </form>
+</div>  
+
+<% include footer.ejs %>

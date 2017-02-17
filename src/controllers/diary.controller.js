@@ -32,6 +32,33 @@ const DiaryController = (Diary) => {
                 res.status(200).send(`Delete Diary 《${diary.title}》 successfully`);
             });
         },
+
+        updateDiaryById: (req, res) => {
+            var diaryid = req.params.id;
+            var diaryData = {
+                title: req.body.title,
+                content: req.body.content,
+                location: req.body.location,
+                photo: req.body.photo,
+                weather: req.body.weather,
+                emotion: req.body.emotion,
+                updated_at: new Date()
+            };
+
+            var conditions = {
+                _id: diaryid
+            };
+            var update = {
+                $set: diaryData
+            };
+            var options = {
+                upsert: true
+            };
+            Diary.update(conditions, update, options, function(err,diary) {
+                if (err) return console.error(err);
+                res.redirect('/your-name-diary/diary/' + diaryid);
+            });
+        }
     }
 
 };

@@ -22,8 +22,17 @@ const DiaryController = (Diary) => {
         },
 
         createDiary: (req, res) => {
-            new Diary(req.body).save((err, data) => {
-                res.status(201).json(data);
+            var diaryData = {
+                    title: req.body.title,
+                    content: req.body.content,
+                    location: req.body.location,
+                    photo: req.body.photo === 'Default' ? '/images/write.jpeg': req.body.photo ,
+                    weather: req.body.weather,
+                    emotion: req.body.emotion,
+                    updated_at: new Date()
+            };
+            new Diary(diaryData).save((err, data) => {
+                res.redirect('/your-name-diary/diary/'+ data.id)
             });
         },
 
@@ -39,7 +48,7 @@ const DiaryController = (Diary) => {
                 title: req.body.title,
                 content: req.body.content,
                 location: req.body.location,
-                photo: req.body.photo,
+                photo: req.body.photo === 'Default' ? '/images/write.jpeg': req.body.photo ,
                 weather: req.body.weather,
                 emotion: req.body.emotion,
                 updated_at: new Date()

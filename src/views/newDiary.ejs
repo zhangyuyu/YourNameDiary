@@ -1,7 +1,7 @@
 <% include header.ejs %>
 
 <div class="container">
-    <h2>Create New Diary</h2>
+    <h2><%= title %></h2>
     <form class="form-diary" method="POST" action="/your-name-diary/diary">
         <div>
             <label class="sr-only">标题</label>
@@ -13,6 +13,11 @@
         </div>
 
         <div style="margin-top:5px;">
+            <input name="photo" class="form-control" value="Default">
+        </div>
+
+        <div style="margin-top:5px;">
+            <a href="/your-name-diary/" class="btn btn-default">取消</a>
             <button type="submit" class="btn btn-primary">保存</button>
         </div>
     </form>

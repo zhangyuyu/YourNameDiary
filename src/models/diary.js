@@ -8,7 +8,10 @@ const diarySchema = new Schema({
     },
     content: String,
     location: String,
-    photo: String,
+    photo:{
+        type: String,
+        default: '/images/write.jpeg'
+    },
     weather: String,
     emotion: String,
     published_at: {
